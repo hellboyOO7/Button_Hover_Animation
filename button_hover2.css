@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+button{
+    --color:rgb(27, 104, 181);
+    border: 0;
+    padding: 20px 45px;
+    margin-top: 300px;
+    color: black;
+    background-color: var(--color);
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: inherit;
+    position: relative;
+    transition: 0.15s ease;
+}
+button:hover{
+    background-color: transparent;
+    color: var(--color);
+}
+button::after, button::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color);
+    transition: 0.35s ease 0.1s;
+}
+button::after{
+    bottom: 0;
+    right: 0;
+}
+button::before{
+    top: 0;
+    left: 0;
+}
+button:hover::after, button:hover::before{
+    width: 100%;
+}
